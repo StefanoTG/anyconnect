@@ -32,6 +32,8 @@ iptables -t nat -A PREROUTING -p tcp --dport 28 -j DNAT --to-destination 94.237.
 iptables -t nat -A PREROUTING -p udp --dport 28 -j DNAT --to-destination 94.237.121.151:23
 iptables -t nat -A PREROUTING -p tcp --dport 29 -j DNAT --to-destination 85.9.209.126:23
 iptables -t nat -A PREROUTING -p udp --dport 29 -j DNAT --to-destination 85.9.209.126:23
+iptables -t nat -A PREROUTING -p tcp --dport 8888 -j DNAT --to-destination 85.9.223.204:8888
+iptables -t nat -A PREROUTING -p udp --dport 8888 -j DNAT --to-destination 85.9.223.204:8888
 iptables -t nat -A POSTROUTING -j MASQUERADE
 
 >&2 echo "Installation failed: unsupported kernel modules."
