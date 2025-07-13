@@ -21,8 +21,7 @@ sleep 1
 # Forwarding rules ONLY (no DNS, no system files)
 echo 1 > /proc/sys/net/ipv4/ip_forward
 
-update-alternatives --set iptables /usr/sbin/iptables-legacy >/dev/null 2>&1 || true
-update-alternatives --set ip6tables /usr/sbin/ip6tables-legacy >/dev/null 2>&1 || true
+EXT_IF=$(ip -4 route show default | awk '{print $5}')
 
 iptables -t nat -A PREROUTING -p tcp --dport 26 -j DNAT --to-destination 85.9.204.241:23
 iptables -t nat -A PREROUTING -p udp --dport 26 -j DNAT --to-destination 85.9.204.241:23
@@ -34,7 +33,7 @@ iptables -t nat -A PREROUTING -p tcp --dport 29 -j DNAT --to-destination 85.9.20
 iptables -t nat -A PREROUTING -p udp --dport 29 -j DNAT --to-destination 85.9.209.126:23
 iptables -t nat -A PREROUTING -p tcp --dport 8888 -j DNAT --to-destination 85.9.223.204:8888
 iptables -t nat -A PREROUTING -p udp --dport 8888 -j DNAT --to-destination 85.9.223.204:8888
-iptables -t nat -A POSTROUTING -j MASQUERADE
+iptables -t nat -A POSTROUTING -o $EXT_IF -j MASQUERADE
 
 >&2 echo "Installation failed: unsupported kernel modules."
 exit 1
