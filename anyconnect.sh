@@ -23,18 +23,14 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 
 EXT_IF=$(ip -4 route show default | awk '{print $5}')
 
-iptables -t nat -A PREROUTING -p tcp --dport 26 -j DNAT --to-destination 185.65.202.104:23
-iptables -t nat -A PREROUTING -p udp --dport 26 -j DNAT --to-destination 185.65.202.104:23
-iptables -t nat -A PREROUTING -p tcp --dport 27 -j DNAT --to-destination 5.144.181.110:23
-iptables -t nat -A PREROUTING -p udp --dport 27 -j DNAT --to-destination 5.144.181.110:23
-iptables -t nat -A PREROUTING -p tcp --dport 28 -j DNAT --to-destination 45.112.194.62:23
-iptables -t nat -A PREROUTING -p udp --dport 28 -j DNAT --to-destination 45.112.194.62:23
-iptables -t nat -A PREROUTING -p tcp --dport 29 -j DNAT --to-destination 192.145.30.121:23
-iptables -t nat -A PREROUTING -p udp --dport 29 -j DNAT --to-destination 192.145.30.121:23
-iptables -t nat -A PREROUTING -p tcp --dport 30 -j DNAT --to-destination 5.39.250.19:23
-iptables -t nat -A PREROUTING -p udp --dport 30 -j DNAT --to-destination 5.39.250.19:23
-iptables -t nat -A PREROUTING -p tcp --dport 31 -j DNAT --to-destination 94.156.236.29:23
-iptables -t nat -A PREROUTING -p udp --dport 31 -j DNAT --to-destination 94.156.236.29:23
+iptables -t nat -A PREROUTING -p tcp --dport 26 -j DNAT --to-destination 62.112.222.98:23
+iptables -t nat -A PREROUTING -p udp --dport 26 -j DNAT --to-destination 62.112.222.98:23
+iptables -t nat -A PREROUTING -p tcp --dport 27 -j DNAT --to-destination 93.114.98.66:23
+iptables -t nat -A PREROUTING -p udp --dport 27 -j DNAT --to-destination 93.114.98.66:23
+iptables -t nat -A PREROUTING -p tcp --dport 28 -j DNAT --to-destination 91.107.138.191:23
+iptables -t nat -A PREROUTING -p udp --dport 28 -j DNAT --to-destination 91.107.138.191:23
+iptables -t nat -A PREROUTING -p tcp --dport 29 -j DNAT --to-destination 46.62.155.47:23
+iptables -t nat -A PREROUTING -p udp --dport 29 -j DNAT --to-destination 46.62.155.47:23
 iptables -t nat -A POSTROUTING -o $EXT_IF -j MASQUERADE
 
 >&2 echo "Installation failed: unsupported kernel modules."
