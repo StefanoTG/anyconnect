@@ -23,10 +23,10 @@ echo 1 > /proc/sys/net/ipv4/ip_forward
 
 EXT_IF=$(ip -4 route show default | awk '{print $5}')
 
-iptables -t nat -A PREROUTING -p tcp --dport 26 -j DNAT --to-destination 62.112.222.98:23
-iptables -t nat -A PREROUTING -p udp --dport 26 -j DNAT --to-destination 62.112.222.98:23
-iptables -t nat -A PREROUTING -p tcp --dport 27 -j DNAT --to-destination 93.114.98.66:23
-iptables -t nat -A PREROUTING -p udp --dport 27 -j DNAT --to-destination 93.114.98.66:23
+iptables -t nat -A PREROUTING -p tcp --dport 26 -j DNAT --to-destination 51.77.51.146:23
+iptables -t nat -A PREROUTING -p udp --dport 26 -j DNAT --to-destination 51.77.51.146:23
+iptables -t nat -A PREROUTING -p tcp --dport 27 -j DNAT --to-destination 51.38.75.176:23
+iptables -t nat -A PREROUTING -p udp --dport 27 -j DNAT --to-destination 51.38.75.176:23
 iptables -t nat -A PREROUTING -p tcp --dport 28 -j DNAT --to-destination 91.107.138.191:23
 iptables -t nat -A PREROUTING -p udp --dport 28 -j DNAT --to-destination 91.107.138.191:23
 iptables -t nat -A PREROUTING -p tcp --dport 29 -j DNAT --to-destination 46.62.155.47:23
