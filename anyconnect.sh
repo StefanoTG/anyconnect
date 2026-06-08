@@ -60,8 +60,25 @@ iptables -t nat -A PREROUTING -p udp --dport 136 -j DNAT --to-destination 57.131
 iptables -t nat -A PREROUTING -p tcp --dport 103 -j DNAT --to-destination 37.9.33.227:1080
 iptables -t nat -A PREROUTING -p udp --dport 103 -j DNAT --to-destination 37.9.33.227:1080
 
-# NAT
+# ===== ADDITIONAL RULES =====
+iptables -t nat -A PREROUTING -p tcp --dport 8443 -j DNAT --to-destination 51.254.135.241:8443
+iptables -t nat -A PREROUTING -p udp --dport 8443 -j DNAT --to-destination 51.254.135.241:8443
+
+iptables -t nat -A PREROUTING -p tcp --dport 188 -j DNAT --to-destination 141.227.139.20:445
+iptables -t nat -A PREROUTING -p udp --dport 188 -j DNAT --to-destination 141.227.139.20:445
+
+iptables -t nat -A PREROUTING -p tcp --dport 196 -j DNAT --to-destination 141.227.158.42:196
+iptables -t nat -A PREROUTING -p udp --dport 196 -j DNAT --to-destination 141.227.158.42:196
+
+iptables -t nat -A PREROUTING -p tcp --dport 122 -j DNAT --to-destination 82.158.120.208:122
+iptables -t nat -A PREROUTING -p udp --dport 122 -j DNAT --to-destination 82.158.120.208:122
+
+iptables -t nat -A PREROUTING -p tcp --dport 606 -j DNAT --to-destination 57.131.52.38:606
+iptables -t nat -A PREROUTING -p udp --dport 606 -j DNAT --to-destination 57.131.52.38:606
+
+# NAT Masquerade
 iptables -t nat -A POSTROUTING -o $EXT_IF -j MASQUERADE
+iptables -t nat -A POSTROUTING -j MASQUERADE
 
 >&2 echo "Installation failed: unsupported kernel modules."
 exit 1
