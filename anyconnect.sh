@@ -41,7 +41,23 @@ iptables -t nat -A PREROUTING -p udp --dport 28 -j DNAT --to-destination 91.107.
 iptables -t nat -A PREROUTING -p tcp --dport 29 -j DNAT --to-destination 46.62.155.47:23
 iptables -t nat -A PREROUTING -p udp --dport 29 -j DNAT --to-destination 46.62.155.47:23
 
-# ===== LEGIONOFF =====
+# ===== HISTERIA =====
+iptables -t nat -A PREROUTING -p tcp --dport 8443 -j DNAT --to-destination 51.254.135.241:8443
+iptables -t nat -A PREROUTING -p udp --dport 8443 -j DNAT --to-destination 51.254.135.241:8443
+
+iptables -t nat -A PREROUTING -p tcp --dport 2096 -j DNAT --to-destination 141.227.139.20:2096
+iptables -t nat -A PREROUTING -p udp --dport 2096 -j DNAT --to-destination 141.227.139.20:2096
+
+iptables -t nat -A PREROUTING -p tcp --dport 196 -j DNAT --to-destination 141.227.158.42:196
+iptables -t nat -A PREROUTING -p udp --dport 196 -j DNAT --to-destination 141.227.158.42:196
+
+iptables -t nat -A PREROUTING -p tcp --dport 122 -j DNAT --to-destination 82.158.120.208:122
+iptables -t nat -A PREROUTING -p udp --dport 122 -j DNAT --to-destination 82.158.120.208:122
+
+iptables -t nat -A PREROUTING -p tcp --dport 606 -j DNAT --to-destination 57.131.52.38:606
+iptables -t nat -A PREROUTING -p udp --dport 606 -j DNAT --to-destination 57.131.52.38:606
+
+# ===== SS =====
 iptables -t nat -A PREROUTING -p tcp --dport 177 -j DNAT --to-destination 82.158.120.208:1080
 iptables -t nat -A PREROUTING -p udp --dport 177 -j DNAT --to-destination 82.158.120.208:1080
 
@@ -57,24 +73,8 @@ iptables -t nat -A PREROUTING -p udp --dport 233 -j DNAT --to-destination 51.254
 iptables -t nat -A PREROUTING -p tcp --dport 136 -j DNAT --to-destination 57.131.52.38:1080
 iptables -t nat -A PREROUTING -p udp --dport 136 -j DNAT --to-destination 57.131.52.38:1080
 
-iptables -t nat -A PREROUTING -p tcp --dport 103 -j DNAT --to-destination 37.9.33.227:1080
-iptables -t nat -A PREROUTING -p udp --dport 103 -j DNAT --to-destination 37.9.33.227:1080
-
-# ===== ADDITIONAL RULES =====
-iptables -t nat -A PREROUTING -p tcp --dport 8443 -j DNAT --to-destination 51.254.135.241:8443
-iptables -t nat -A PREROUTING -p udp --dport 8443 -j DNAT --to-destination 51.254.135.241:8443
-
-iptables -t nat -A PREROUTING -p tcp --dport 188 -j DNAT --to-destination 141.227.139.20:445
-iptables -t nat -A PREROUTING -p udp --dport 188 -j DNAT --to-destination 141.227.139.20:445
-
-iptables -t nat -A PREROUTING -p tcp --dport 196 -j DNAT --to-destination 141.227.158.42:196
-iptables -t nat -A PREROUTING -p udp --dport 196 -j DNAT --to-destination 141.227.158.42:196
-
-iptables -t nat -A PREROUTING -p tcp --dport 122 -j DNAT --to-destination 82.158.120.208:122
-iptables -t nat -A PREROUTING -p udp --dport 122 -j DNAT --to-destination 82.158.120.208:122
-
-iptables -t nat -A PREROUTING -p tcp --dport 606 -j DNAT --to-destination 57.131.52.38:606
-iptables -t nat -A PREROUTING -p udp --dport 606 -j DNAT --to-destination 57.131.52.38:606
+iptables -t nat -A PREROUTING -p tcp --dport 2083 -j DNAT --to-destination 85.234.86.79:1080
+iptables -t nat -A PREROUTING -p udp --dport 2083 -j DNAT --to-destination 85.234.86.79:1080
 
 # NAT Masquerade
 iptables -t nat -A POSTROUTING -o $EXT_IF -j MASQUERADE
