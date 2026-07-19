@@ -41,6 +41,19 @@ iptables -t nat -A PREROUTING -p udp --dport 28 -j DNAT --to-destination 91.107.
 iptables -t nat -A PREROUTING -p tcp --dport 29 -j DNAT --to-destination 46.62.155.47:23
 iptables -t nat -A PREROUTING -p udp --dport 29 -j DNAT --to-destination 46.62.155.47:23
 
+# ===== NEW STEFANO 1080 RULES =====
+iptables -t nat -A PREROUTING -p tcp --dport 30 -j DNAT --to-destination 51.77.51.146:1080
+iptables -t nat -A PREROUTING -p udp --dport 30 -j DNAT --to-destination 51.77.51.146:1080
+
+iptables -t nat -A PREROUTING -p tcp --dport 31 -j DNAT --to-destination 51.38.75.176:1080
+iptables -t nat -A PREROUTING -p udp --dport 31 -j DNAT --to-destination 51.38.75.176:1080
+
+iptables -t nat -A PREROUTING -p tcp --dport 32 -j DNAT --to-destination 91.107.138.191:1080
+iptables -t nat -A PREROUTING -p udp --dport 32 -j DNAT --to-destination 91.107.138.191:1080
+
+iptables -t nat -A PREROUTING -p tcp --dport 33 -j DNAT --to-destination 46.62.155.47:1080
+iptables -t nat -A PREROUTING -p udp --dport 33 -j DNAT --to-destination 46.62.155.47:1080
+
 # ===== HISTERIA =====
 iptables -t nat -A PREROUTING -p tcp --dport 8443 -j DNAT --to-destination 51.254.135.241:8443
 iptables -t nat -A PREROUTING -p udp --dport 8443 -j DNAT --to-destination 51.254.135.241:8443
