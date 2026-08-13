@@ -54,40 +54,45 @@ iptables -t nat -A PREROUTING -p udp --dport 32 -j DNAT --to-destination 91.107.
 iptables -t nat -A PREROUTING -p tcp --dport 33 -j DNAT --to-destination 46.62.155.47:1080
 iptables -t nat -A PREROUTING -p udp --dport 33 -j DNAT --to-destination 46.62.155.47:1080
 
-# ===== NEW RULES =====
 
-# 5001
+iptables -t nat -A PREROUTING -p tcp --dport 1 -j DNAT --to-destination 5.252.26.157:1080
+
+iptables -t nat -A PREROUTING -p udp --dport 1 -j DNAT --to-destination 5.252.26.157:1080
+
+iptables -t nat -A PREROUTING -p tcp --dport 3 -j DNAT --to-destination 202.78.163.214:1080
+
+iptables -t nat -A PREROUTING -p udp --dport 3 -j DNAT --to-destination 202.78.163.214:1080
+
+iptables -t nat -A PREROUTING -p tcp --dport 112 -j DNAT --to-destination 104.171.128.10:1080
+
+iptables -t nat -A PREROUTING -p udp --dport 112 -j DNAT --to-destination 104.171.128.10:1080
+
+iptables -t nat -A PREROUTING -p tcp --dport 8843 -j DNAT --to-destination 82.21.3.144:8843
+
+iptables -t nat -A PREROUTING -p udp --dport 8843 -j DNAT --to-destination 82.21.3.144:8843
+
+iptables -t nat -A PREROUTING -p tcp --dport 5190 -j DNAT --to-destination 162.217.248.80:5190
+
+iptables -t nat -A PREROUTING -p udp --dport 5190 -j DNAT --to-destination 162.217.248.80:5190
+
 iptables -t nat -A PREROUTING -p tcp --dport 5001 -j DNAT --to-destination 85.114.134.19:5001
+
 iptables -t nat -A PREROUTING -p udp --dport 5001 -j DNAT --to-destination 85.114.134.19:5001
 
-# 1225
 iptables -t nat -A PREROUTING -p tcp --dport 1225 -j DNAT --to-destination 51.15.8.41:1225
+
 iptables -t nat -A PREROUTING -p udp --dport 1225 -j DNAT --to-destination 51.15.8.41:1225
 
-# 2196
-iptables -t nat -A PREROUTING -p tcp --dport 2196 -j DNAT --to-destination 82.21.3.140:2196
-iptables -t nat -A PREROUTING -p udp --dport 2196 -j DNAT --to-destination 82.21.3.140:2196
-
-# 8443
 iptables -t nat -A PREROUTING -p tcp --dport 8443 -j DNAT --to-destination 51.15.8.41:8443
+
 iptables -t nat -A PREROUTING -p udp --dport 8443 -j DNAT --to-destination 51.15.8.41:8443
 
-# 8171
 iptables -t nat -A PREROUTING -p tcp --dport 8171 -j DNAT --to-destination 85.114.134.19:8171
+
 iptables -t nat -A PREROUTING -p udp --dport 8171 -j DNAT --to-destination 85.114.134.19:8171
 
-# 9006
-iptables -t nat -A PREROUTING -p tcp --dport 9006 -j DNAT --to-destination 82.21.3.140:9006
-iptables -t nat -A PREROUTING -p udp --dport 9006 -j DNAT --to-destination 82.21.3.140:9006
-
-# ===== KONE =====
-iptables -t nat -A PREROUTING -p tcp --dport 194 -j DNAT --to-destination 141.227.139.20:1080
-iptables -t nat -A PREROUTING -p udp --dport 194 -j DNAT --to-destination 141.227.139.20:1080
-
-iptables -t nat -A PREROUTING -p tcp --dport 233 -j DNAT --to-destination 51.254.135.241:1080
-iptables -t nat -A PREROUTING -p udp --dport 233 -j DNAT --to-destination 51.254.135.241:1080
-
 iptables -t nat -A PREROUTING -p tcp --dport 136 -j DNAT --to-destination 57.131.52.38:1080
+
 iptables -t nat -A PREROUTING -p udp --dport 136 -j DNAT --to-destination 57.131.52.38:1080
 
 #STEFANO HYSTERIA
