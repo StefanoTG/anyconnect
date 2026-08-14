@@ -36,11 +36,11 @@ iptables -t nat -A PREROUTING -p udp --dport 26 -j DNAT --to-destination 51.77.5
 iptables -t nat -A PREROUTING -p tcp --dport 27 -j DNAT --to-destination 51.38.75.176:23
 iptables -t nat -A PREROUTING -p udp --dport 27 -j DNAT --to-destination 51.38.75.176:23
 
-iptables -t nat -A PREROUTING -p tcp --dport 28 -j DNAT --to-destination 91.107.138.191:23
-iptables -t nat -A PREROUTING -p udp --dport 28 -j DNAT --to-destination 91.107.138.191:23
+iptables -t nat -A PREROUTING -p tcp --dport 28 -j DNAT --to-destination 91.99.126.229:23
+iptables -t nat -A PREROUTING -p udp --dport 28 -j DNAT --to-destination 91.99.126.229:23
 
-iptables -t nat -A PREROUTING -p tcp --dport 29 -j DNAT --to-destination 46.62.155.47:23
-iptables -t nat -A PREROUTING -p udp --dport 29 -j DNAT --to-destination 46.62.155.47:23
+iptables -t nat -A PREROUTING -p tcp --dport 29 -j DNAT --to-destination 65.108.57.83:23
+iptables -t nat -A PREROUTING -p udp --dport 29 -j DNAT --to-destination 65.108.57.83:23
 
 # ===== STEFANO 1080 =====
 iptables -t nat -A PREROUTING -p tcp --dport 30 -j DNAT --to-destination 51.77.51.146:1080
@@ -49,11 +49,11 @@ iptables -t nat -A PREROUTING -p udp --dport 30 -j DNAT --to-destination 51.77.5
 iptables -t nat -A PREROUTING -p tcp --dport 31 -j DNAT --to-destination 51.38.75.176:1080
 iptables -t nat -A PREROUTING -p udp --dport 31 -j DNAT --to-destination 51.38.75.176:1080
 
-iptables -t nat -A PREROUTING -p tcp --dport 32 -j DNAT --to-destination 91.107.138.191:1080
-iptables -t nat -A PREROUTING -p udp --dport 32 -j DNAT --to-destination 91.107.138.191:1080
+iptables -t nat -A PREROUTING -p tcp --dport 32 -j DNAT --to-destination 91.99.126.229:1080
+iptables -t nat -A PREROUTING -p udp --dport 32 -j DNAT --to-destination 91.99.126.229:1080
 
-iptables -t nat -A PREROUTING -p tcp --dport 33 -j DNAT --to-destination 46.62.155.47:1080
-iptables -t nat -A PREROUTING -p udp --dport 33 -j DNAT --to-destination 46.62.155.47:1080
+iptables -t nat -A PREROUTING -p tcp --dport 33 -j DNAT --to-destination 65.108.57.83:1080
+iptables -t nat -A PREROUTING -p udp --dport 33 -j DNAT --to-destination 65.108.57.83:1080
 
 iptables -t nat -A PREROUTING -p tcp --dport 1 -j DNAT --to-destination 5.252.26.157:1080
 iptables -t nat -A PREROUTING -p udp --dport 1 -j DNAT --to-destination 5.252.26.157:1080
@@ -86,11 +86,11 @@ iptables -t nat -A PREROUTING -p tcp --dport 136 -j DNAT --to-destination 57.131
 iptables -t nat -A PREROUTING -p udp --dport 136 -j DNAT --to-destination 57.131.52.38:1080
 
 # STEFANO HYSTERIA
-iptables -t nat -A PREROUTING -p tcp --dport 5005 -j DNAT --to-destination 91.107.138.191:5005
-iptables -t nat -A PREROUTING -p udp --dport 5005 -j DNAT --to-destination 91.107.138.191:5005
+iptables -t nat -A PREROUTING -p tcp --dport 5005 -j DNAT --to-destination 91.99.126.229:5005
+iptables -t nat -A PREROUTING -p udp --dport 5005 -j DNAT --to-destination 91.99.126.229:5005
 
-iptables -t nat -A PREROUTING -p tcp --dport 5002 -j DNAT --to-destination 46.62.155.47:5002
-iptables -t nat -A PREROUTING -p udp --dport 5002 -j DNAT --to-destination 46.62.155.47:5002
+iptables -t nat -A PREROUTING -p tcp --dport 5002 -j DNAT --to-destination 65.108.57.83:5002
+iptables -t nat -A PREROUTING -p udp --dport 5002 -j DNAT --to-destination 65.108.57.83:5002
 
 iptables -t nat -A PREROUTING -p tcp --dport 5003 -j DNAT --to-destination 51.77.51.146:5003
 iptables -t nat -A PREROUTING -p udp --dport 5003 -j DNAT --to-destination 51.77.51.146:5003
